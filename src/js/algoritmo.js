@@ -11,7 +11,7 @@ function crearPoblacion(cantidad){
 	for( k =  0 ; k  < cantidad; ++k){
 
 		console.log("ciclo" );
-		poblacion[k] = {peso: 0, precio: 0 , medida: 0, fitness: 0, imagen: "", componente:  comp() };
+		poblacion[k] = {peso: 0, precio: 0 , medida: 0, fitness: 0, componente:  comp() };
 
 		llenarComponentes (poblacion[k].componente);
 
