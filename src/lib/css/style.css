@@ -28,14 +28,9 @@
 		color: #FFF;
 	}
 	
-	.header .links{
-		background-color: #050;
-		display: inline;
+	#helpNContact{
+		vertical-align: middle;
 		float: right;
-	}
-	
-	.header .links a{
-		color: #FFF;
 	}
 		
 .main{
