@@ -45,20 +45,34 @@ function requestFitCalc() {
 }
 
 function requestProduct() {
-  $.getJSON( "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + $("#product").val() + "?callback=?", function( data ) {
+  /*$.getJSON( "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + $("#product").val() + "?callback=?", function( data ) {
     $( ".result" ).html( data );
     alert( "Load was performed." );
+  });*/
+  var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + $("#product").val() + "?callback=?";
+
+  $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "jsonp",
+    success: function (msg) {
+      if(msg) {
+        console.info("Request product succeeded!");
+      } else {
+        console.error("There was an error fetching product info!");
+      }
+    }
   });
 }
 
 function requestBike() {
   var sendInfo = "_dyncharset=UTF-8&%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.frameSkuId=PIN000M&_D%3A%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.frameSkuId=+&%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.useMockResponse=false&_D%3A%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.useMockResponse=+&_D%3A%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.getCompatibleGruppos=+&_DARGS=%2FStore%2Fcatalog%2Finclude%2FbikeBuilderInit.jsp.ajaxform-getGruppos&%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.getCompatibleGruppos=";
-  var url = "/public/compcyclist";
+  var url = "/compcyclist/Store/catalog/productLanding.jsp?_DARGS=/Store/catalog/include/bikeBuilderInit.jsp.ajaxform-getGruppos";
 
   $.ajax({
     type: "POST",
     url: url,
-    data: JSON.stringify(sendInfo),
+    data: sendInfo,
     dataType: "json",
     contentType: 'application/json;charset=UTF-8',
     success: function (msg) {
