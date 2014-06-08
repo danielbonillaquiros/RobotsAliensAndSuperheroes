@@ -130,7 +130,7 @@ function mutar(cruzados){
 					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
 					cruzados[i].componente[cualGen].precio = handlebars_array[cual].skus[0].salePrice;
 					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					//cruzados[i].componente[cualGen].imagen = handlebars_array[cual].detailImages[0].url;
+					cruzados[i].componente[cualGen].imagen = handlebars_array[cual].detailImages[0].url;
 					break;
 				case 3:
 					cual = wheels_array.length;
@@ -139,7 +139,7 @@ function mutar(cruzados){
 					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
 					cruzados[i].componente[cualGen].precio = wheels_array[cual].skus[0].salePrice;
 					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					//cruzados[i].componente[cualGen].imagen = wheels_array[cual].detailImages[0].url;
+					cruzados[i].componente[cualGen].imagen = wheels_array[cual].detailImages[0].url;
 					break;
 				case 4:
 				    cual = cranksets_array.length;
@@ -148,7 +148,7 @@ function mutar(cruzados){
 					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
 					cruzados[i].componente[cualGen].precio = cranksets_array[cual].skus[0].salePrice;
 					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					//cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
+					cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
 					break;
 
 			}
