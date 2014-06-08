@@ -80,8 +80,7 @@ function requestFitCalc() {
   });
 }
 
-function requestProduct(product) {
-  var product_id = $("#product").val();
+function requestProduct(product_id) {
   var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + product_id + "?callback=?";
 
   var temp = $.ajax({
@@ -90,13 +89,14 @@ function requestProduct(product) {
     dataType: "json",
     success: function (msg) {
       if(msg) {
-        product = temp.responseJSON.products[0];
         console.info("Request product succeeded!");
       } else {
         console.error("There was an error fetching product info!");
       }
     }
   });
+
+  return temp;
 }
 
 function pushProduct(product_id, product_array) {
