@@ -14,9 +14,9 @@
 	</head>
     <body>
 		<div class="header">
-			<img src="lib/img/Bike.png">
-			<h1>BICICLETITUHS</h1>
-			<p id="helpNContact">Help | Contact</p>
+			<img src="lib/img/Bike.png" width="100px">
+			<img src="lib/img/Logo3.png" width="600px">
+			<p>Help | Contact</p>
 		</div>
 		<div class="main">
 			<div class="parameters">
@@ -87,7 +87,7 @@
 			</div>
 			<div class="results">
 				<div class="item" id="item1" onclick="switchDiv('option1-items');">
-					<p>Option 1</p>
+					<p>Option 1<span id="priceTag">$____</span></p>
 					<p id="expcol">></p>
 				</div>
                 <div id="option1-items" style="display:none;">
@@ -112,7 +112,7 @@
 					</div>
                 </div>
 				<div class="item" id="item1">
-					<p>Option 2</p>
+					<p>Option 2<span id="priceTag">$____</span></p>
 					<p id="expcol">></p>
 				</div>
 			</div>
@@ -125,6 +125,9 @@
 				</div>
 				<div class="item">
 					<p>Code:</p>
+				</div>
+				<div class="item">
+					<p>Price:</p>
 				</div>
 				<div class="item">
 					<p>Weight:</p>

@@ -14,22 +14,13 @@
 	.header img{
 		vertical-align: middle;
 		display: inline;
-	}
-
-	.header h1{
-		vertical-align: middle;
-		display: inline;
-		color: #FFF;
+		margin: 0;
 	}
 
 	.header p{
-		vertical-align:middle;
+		vertical-align: middle;
 		display: inline;
 		color: #FFF;
-	}
-	
-	#helpNContact{
-		vertical-align: middle;
 		float: right;
 	}
 		
@@ -112,6 +103,10 @@ footer{
 	.item img{
 		display: block;
 		margin: auto;
+	}
+	
+	.item #priceTag{
+		padding: 0 15em;
 	}
 	
 .itemGO{
