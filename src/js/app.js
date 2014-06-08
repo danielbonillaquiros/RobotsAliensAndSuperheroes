@@ -1,6 +1,35 @@
 function switchDiv(div_id) {
-  console.log("here");
   $("#" + div_id).css("display", $("#" + div_id).css("display")=="none"?"inherit":"none");
+}
+
+function calculateBike() {
+  var can_continue = true;
+  var msg = "required";
+
+  var inputs = ["budget",
+               "bike-weight",
+               "inseam",
+               "trunk",
+               "forearm",
+               "arm",
+               "thigh",
+               "lowerLeg",
+               "sternalNotch",
+               "overallHeight"];
+
+  for(var i = 0; i < inputs.length; ++i) {
+    if($("#" + inputs[i]).val() == "" || $("#" + inputs[i]).val() == msg) {
+      $("#" + inputs[i]).val(msg);
+      can_continue = false;
+    }
+  }
+
+  if(can_continue) {
+    requestFitCalc();
+    presupuesto = parseInt($("#budget").val());
+    setTimeout(function(){algoritmo();}, 1000);
+		$(".results").show();
+  }
 }
 
 var fitCalculation;
@@ -31,7 +60,7 @@ function requestFitCalc() {
     trunk: trunk,
     unit: unit
   };
-  console.info(sendInfo);
+
   var url = "/public/fitcalculator/fit";
 
   fitCalculation = $.ajax({
