@@ -1,3 +1,8 @@
+function switchDiv(div_id) {
+  console.log("here");
+  $("#" + div_id).css("display", $("#" + div_id).css("display")=="none"?"inherit":"none");
+}
+
 var fitCalculation;
 
 function requestFitCalc() {
