@@ -9,6 +9,8 @@
 		<!--SCRIPTS-->
 		<script type="text/javascript" src="lib/scripts/jquery.js"></script>
 		<script type="text/javascript" src="lib/scripts/scripts.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/algoritmo.js"></script>
 	</head>
     <body>
 		<div class="header">
@@ -28,7 +30,7 @@
 				</div>
 				<div class="item" id="bikeType">
 					<p>Bicycle type</p>
-					<select>
+					<select id="bikeType">
 			          <option value="mountain">Mountain</option>
 			          <option value="road">Road</option>
 			          <option value="cyclocross">Cyclocross</option>
@@ -38,40 +40,47 @@
 				<div class="item" id="fitCalc">
 					<p>Fit Calculator</p>
 				</div>
+                    <div class="item" id="bikeType">
+                        &nbsp;&nbsp;&nbsp; <p>Gender</p>
+                        <select id="gender">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                    </div>
 					<div class="item" id="fitCalc1">
-						<p>&nbsp&nbsp&nbsp <p>Actual inseam</p>
-						<input type="text" name="actualinseam">
+						&nbsp;&nbsp;&nbsp; <p>Actual inseam</p>
+						<input id="inseam" type="text" name="actualinseam">
 					</div>
 					<div class="item" id="fitCalc2">
-						<p>&nbsp&nbsp&nbsp <p>Trunk</p>
-						<input type="text" name="trunk">
+						&nbsp;&nbsp;&nbsp; <p>Trunk</p>
+						<input id="trunk" type="text" name="trunk">
 					</div>
 					<div class="item" id="fitCalc3">
-						&nbsp&nbsp&nbsp <p>Forearm</p>
-						<input type="text" name="foream">
+						&nbsp;&nbsp;&nbsp; <p>Forearm</p>
+						<input id="forearm" type="text" name="forearm">
 					</div>
 					<div class="item" id="fitCalc4">
-						&nbsp&nbsp&nbsp <p>Arm</p>
-						<input type="text" name="arm">
+						&nbsp;&nbsp;&nbsp; <p>Arm</p>
+						<input id="arm" type="text" name="arm">
 					</div>
 					<div class="item" id="fitCalc5">
-						&nbsp&nbsp&nbsp <p>Thigh</p>
-						<input type="text" name="thigh">
+						&nbsp;&nbsp;&nbsp; <p>Thigh</p>
+						<input id="thigh" type="text" name="thigh">
 					</div>
 					<div class="item" id="fitCalc6">
-						&nbsp&nbsp&nbsp <p>Lower leg</p>
-						<input type="text" name="lowerleg">
+						&nbsp;&nbsp;&nbsp; <p>Lower leg</p>
+						<input id="lowerLeg" type="text" name="lowerleg">
 					</div>
 					<div class="item" id="fitCalc7">
-						&nbsp&nbsp&nbsp <p>Sternal notch</p>
-						<input type="text" name="sternalnotch">
+						&nbsp;&nbsp;&nbsp; <p>Sternal notch</p>
+						<input id="sternalNotch" type="text" name="sternalnotch">
 					</div>
 					<div class="item">
-						&nbsp&nbsp&nbsp <p>Total height</p>
-						<input type="text" name="totalheight">
-					</div>			
-				<div class="itemGO">
-					<p>GO ></p>
+						&nbsp;&nbsp;&nbsp; <p>Total height</p>
+						<input id="overallHeight" type="text" name="totalheight">
+					</div>
+				<div class="itemGO" onclick="requestFitCalc(fitCalculation);">
+					<p>GO &gt;</p>
 				</div>
 			</div>
 			<div class="results">
@@ -119,7 +128,7 @@
 		<footer>
 			<p>
 			   Designed by Robots, Aliens &amp Superheroes<br>
-			   @2014 Hackathon, Backcountry.</p>			
+			   @2014 Hackathon, Backcountry.</p>
 		</footer>
     </body>
 </html>

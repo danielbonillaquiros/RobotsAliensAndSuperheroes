@@ -4,23 +4,22 @@
 	var poblacion = new Array();
 	var numeroPoblacion = 10;
 
-
 function crearPoblacion(cantidad){
 	//poblacion = new Array() ;
 	console.log("entro" );
-	
+
 	for( k =  0 ; k  < cantidad; ++k){
-	
+
 		console.log("ciclo" );
-		poblacion[k] = {peso: 0, precio: 0 , medida: 0, fitness: 0, imagen: "", componente:  comp() }; 
-		
+		poblacion[k] = {peso: 0, precio: 0 , medida: 0, fitness: 0, imagen: "", componente:  comp() };
+
 		llenarComponentes (poblacion[k].componente);
-		
+
 	}
 
 }
 
-function comp() { 
+function comp() {
 	var nueva = new Array();
 	for(var i = 0; i < 5 ; ++i ){
 		nueva [i] = { };
@@ -33,7 +32,7 @@ function llenarComponentes(lista){
 	for(i = 0; i < 5 ; ++i){
 			var cual ;
 		switch (i){
-				case 0: 
+				case 0:
 					cual = frames_array.length;
 					cual = Math.floor((Math.random() * cual));
 					lista[i].id = frames_array[cual].id;
@@ -46,7 +45,7 @@ function llenarComponentes(lista){
 					lista[i].id = saddles_array[cual].id;
 					lista[i].precio= saddles_array[cual].skus[0].salePrice;
 					lista[i].imagen =  saddles_array[cual].detailImages[0].url;
-					
+
 					break;
 				case 2:
 					cual = handlebars_array.length;
@@ -54,7 +53,7 @@ function llenarComponentes(lista){
 					lista[i].id = handlebars_array[cual].id;
 					lista[i].precio= handlebars_array[cual].skus[0].salePrice;
 					//lista[i].imagen =  handlebars_array[cual].detailImages[0].url;
-				
+
 					break;
 				case 3:
 					cual = wheels_array.length;
@@ -65,7 +64,7 @@ function llenarComponentes(lista){
 					console.log("///////////");
 					console.log(cual);
 					//lista[i].imagen =  wheels_array[cual].detailImages[0].url;
-				
+
 					break;
 				case 4:
 					cual = cranksets_array.length;
@@ -73,11 +72,11 @@ function llenarComponentes(lista){
 					lista[i].id = cranksets_array[cual].id;
 					lista[i].precio= cranksets_array[cual].skus[0].salePrice;
 					//lista[i].imagen =  cranksets_array[cual].detailImages[0].url;
-				
-					break;				
-			
+
+					break;
+
 			}
-		
+
 		lista[i].medida = Math.floor((Math.random() * 3) +1);
 		lista[i].peso =  Math.floor((Math.random() * 5) +1);
 		console.log(lista[i].id);
@@ -86,7 +85,7 @@ function llenarComponentes(lista){
 
 function mutar(cruzados){
 	var probabilidadMutacion = 50;
-	
+
 	for(i = 0; i < cruzados.length ; ++i){
 		var probaGen =  Math.floor((Math.random() * 100) + 1);
 		if(probaGen < probabilidadMutacion){
@@ -137,10 +136,10 @@ function mutar(cruzados){
 					cruzados[i].componente[cualGen].precio = cranksets_array[cual].skus[0].salePrice;
 					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
 					//cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
-					break;				
-			
+					break;
+
 			}
-				
+
 		}
 	}
 }
@@ -166,8 +165,8 @@ function cruzar(padres){
 					hijoDos.componente[i].precio = papaUno.componente[i].precio;
 					hijoDos.componente[i].medida = papaUno.componente[i].medida;
 					hijoDos.componente[i].id = papaUno.componente[i].id;
-				
-				
+
+
 				}
 				else{
 					hijoUno.componente[i].peso = papaDos.componente[i].peso;
@@ -178,23 +177,23 @@ function cruzar(padres){
 			}
 			nuevos.push(hijoUno);
 			nuevos.push(hijoDos);
-			
+
 		}
 		else{
 			nuevos.push(padres.pop());
 			nuevos.push(padres.pop());
-	
+
 		}
-		
+
 		return nuevos;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	return nuevos;
-	
+
 
 }
 
@@ -204,10 +203,10 @@ function sustitucion(nuevos, viejos){
         {
             retorno.push(viejos[i]);
         }
-            
+
         for ( i = 0; i < nuevos.length; i++)
         {
-            retorno.push(nuevos[i]); 
+            retorno.push(nuevos[i]);
 
         }
         return retorno;
@@ -217,11 +216,11 @@ function sustitucion(nuevos, viejos){
 function seleccion (padres, cantPadresCruce){
 
 		padresParaCruce = new Array();
-         
+
 }
 
 function sumarCosas(todos){
-		
+
 	for (i = 0 ; i < todos.length ; ++i){
 		var pesot = 0;
 		var preciot =0;
@@ -249,9 +248,9 @@ function sumarCosas(todos){
 		else{
 			todos[i].fitness += preciot;
 		}
-		
+
 	}
-	
+
 }
 
 function algoritmo(){
@@ -264,11 +263,11 @@ function algoritmo(){
 		console.log(generacion);
 		sumarCosas(poblacion);
 		poblacion.sort(function(a, b){return a.fitness - b.fitness });
-		
+
 		poblacion = cruzar(poblacion);
 		mutar(poblacion);
 		++generacion;
-		
+
 	}
 	sumarCosas(poblacion);
 	poblacion.sort(function(a, b){return a.fitness - b.fitness });

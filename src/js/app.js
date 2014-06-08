@@ -1,15 +1,17 @@
-function requestFitCalc(fitCalc) {
-  var arm = $("#arm").val();
-  var bikeType = $("#bikeType").val();
-  var forearm = $("#forearm").val();
-  var gender = $("#gender").val();
-  var inseam = $("#inseam").val();
-  var lowerLeg = $("#lowerLeg").val();
-  var overallHeight = $("#overallHeight").val();
-  var sternalNotch = $("#sternalNotch").val();
-  var thigh = $("#thigh").val();
-  var trunk = $("#trunk").val();
-  var unit = $("#unit").val();
+var fitCalculation;
+
+function requestFitCalc() {
+  var arm = parseInt($("#arm").val());
+  var bikeType = $("#bikeType option:selected").val();
+  var forearm = parseInt($("#forearm").val());
+  var gender = $("#gender option:selected").val();
+  var inseam = parseInt($("#inseam").val());
+  var lowerLeg = parseInt($("#lowerLeg").val());
+  var overallHeight = parseInt($("#overallHeight").val());
+  var sternalNotch = parseInt($("#sternalNotch").val());
+  var thigh = parseInt($("#thigh").val());
+  var trunk = parseInt($("#trunk").val());
+  var unit = "in";//$("#unit").val();
 
   var sendInfo = {
     arm: arm,
@@ -24,9 +26,10 @@ function requestFitCalc(fitCalc) {
     trunk: trunk,
     unit: unit
   };
+  console.info(sendInfo);
   var url = "/public/fitcalculator/fit";
 
-  var temp = $.ajax({
+  fitCalculation = $.ajax({
     type: "POST",
     url: url,
     data: JSON.stringify(sendInfo),
@@ -34,7 +37,7 @@ function requestFitCalc(fitCalc) {
     contentType: "application/json;charset=UTF-8",
     success: function (msg) {
       if (msg) {
-        fitCalc = temp;
+        fitCalculation = fitCalculation.responseJSON;
         console.info("Fit calculation succeeded!");
       } else {
         console.error("There was an error with the fit calculation!");
