@@ -39,6 +39,8 @@ function llenarComponentes(lista){
             lista[i].id = frames_array[cual].id;
             lista[i].precio= frames_array[cual].skus[0].salePrice;
             lista[i].imagen =  frames_array[cual].detailImages[0].url;
+            lista[i].nombre =  frames_array[cual].title;
+
           } else {
             --i;
           }
@@ -50,6 +52,7 @@ function llenarComponentes(lista){
             lista[i].id = saddles_array[cual].id;
             lista[i].precio= saddles_array[cual].skus[0].salePrice;
             lista[i].imagen =  saddles_array[cual].detailImages[0].url;
+            lista[i].nombre =  saddles_array[cual].title;
           } else {
             --i;
           }
@@ -61,6 +64,8 @@ function llenarComponentes(lista){
             lista[i].id = handlebars_array[cual].id;
             lista[i].precio= handlebars_array[cual].skus[0].salePrice;
             lista[i].imagen =  handlebars_array[cual].detailImages[0].url;
+            lista[i].nombre =  handlebars_array[cual].title;
+
           } else {
             --i;
           }
@@ -72,6 +77,7 @@ function llenarComponentes(lista){
             lista[i].id = wheels_array[cual].id;
             lista[i].precio= wheels_array[cual].skus[0].salePrice;
             lista[i].imagen =  wheels_array[cual].detailImages[0].url;
+            lista[i].nombre =  wheels_array[cual].title;
           } else {
             --i;
           }
@@ -83,6 +89,7 @@ function llenarComponentes(lista){
             lista[i].id = cranksets_array[cual].id;
             lista[i].precio= cranksets_array[cual].skus[0].salePrice;
             lista[i].imagen =  cranksets_array[cual].detailImages[0].url;
+            lista[i].nombre =  cranksets_array[cual].title;
           } else {
             --i;
           }
@@ -114,6 +121,7 @@ function mutar(cruzados){
             cruzados[i].componente[cualGen].precio = frames_array[cual].skus[0].salePrice;
             cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
             cruzados[i].componente[cualGen].imagen = frames_array[cual].detailImages[0].url;
+            cruzados[i].componente[cualGen].nombre = frames_array[cual].title;
           } else {
             --i;
           }
@@ -127,6 +135,7 @@ function mutar(cruzados){
             cruzados[i].componente[cualGen].precio = saddles_array[cual].skus[0].salePrice;
             cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
             cruzados[i].componente[cualGen].imagen = saddles_array[cual].detailImages[0].url;
+            cruzados[i].componente[cualGen].nombre = saddles_array[cual].title;
           }else {
             --i;
           }
@@ -140,6 +149,7 @@ function mutar(cruzados){
             cruzados[i].componente[cualGen].precio = handlebars_array[cual].skus[0].salePrice;
             cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
             cruzados[i].componente[cualGen].imagen = handlebars_array[cual].detailImages[0].url;
+            cruzados[i].componente[cualGen].nombre = handlebars_array[cual].title;
           } else {
             --i;
           }
@@ -153,6 +163,7 @@ function mutar(cruzados){
             cruzados[i].componente[cualGen].precio = wheels_array[cual].skus[0].salePrice;
             cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
             cruzados[i].componente[cualGen].imagen = wheels_array[cual].detailImages[0].url;
+            cruzados[i].componente[cualGen].nombre = wheels_array[cual].title;
           } else {
             --i;
           }
@@ -166,6 +177,7 @@ function mutar(cruzados){
             cruzados[i].componente[cualGen].precio = cranksets_array[cual].skus[0].salePrice;
             cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
             cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
+            cruzados[i].componente[cualGen].nombre = cranksets_array[cual].title;
           } else {
             --i;
           }

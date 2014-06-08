@@ -2,142 +2,156 @@
 <html>
     <head>
         <title>Bicicletituhs</title>
-		<!-- CSS -->
-		<link rel="stylesheet" href="lib/css/style.css" />
-		<!--META-->
-		<meta charset="UTF-8">
-		<!--SCRIPTS-->
-		<script type="text/javascript" src="lib/scripts/jquery.js"></script>
-		<script type="text/javascript" src="lib/scripts/scripts.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="lib/css/style.css" />
+        <!--META-->
+        <meta charset="UTF-8">
+        <!--SCRIPTS-->
+        <script type="text/javascript" src="lib/scripts/jquery.js"></script>
+        <script type="text/javascript" src="lib/scripts/scripts.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/algoritmo.js"></script>
-	</head>
+    </head>
     <body>
-		<div class="header">
-			<img src="lib/img/Bike.png">
-			<h1>BICICLETITUHS</h1>
-			<p id="helpNContact">Help | Contact</p>
-		</div>
-		<div class="main">
-			<div class="parameters">
-				<div class="item">
-					<p>Budget</p>
-					<input id="budget" type="text" name="budget">
-				</div>
-				<div class="item" id="bikeWeight">
-					<p>Bicycle weight</p>
-					<input id="bike-weight" type="text" name="weight">
-				</div>
-				<div class="item" id="bikeType">
-					<p>Bicycle type</p>
-					<select id="bikeType">
-			          <option value="mountain">Mountain</option>
-			          <option value="road">Road</option>
-			          <option value="cyclocross">Cyclocross</option>
-			          <option value="triathlon">Triathlon</option>
-			        </select>
-				</div>
-				<div class="item" id="fitCalc">
-					<p>Fit Calculator</p>
-				</div>
-                    <div class="item" id="bikeType">
-                        &nbsp;&nbsp;&nbsp; <p>Gender</p>
-                        <select id="gender">
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                        </select>
-                    </div>
-					<div class="item" id="fitCalc1">
-						&nbsp;&nbsp;&nbsp; <p>Actual inseam</p>
-						<input id="inseam" type="text" name="actualinseam">
-					</div>
-					<div class="item" id="fitCalc2">
-						&nbsp;&nbsp;&nbsp; <p>Trunk</p>
-						<input id="trunk" type="text" name="trunk">
-					</div>
-					<div class="item" id="fitCalc3">
-						&nbsp;&nbsp;&nbsp; <p>Forearm</p>
-						<input id="forearm" type="text" name="forearm">
-					</div>
-					<div class="item" id="fitCalc4">
-						&nbsp;&nbsp;&nbsp; <p>Arm</p>
-						<input id="arm" type="text" name="arm">
-					</div>
-					<div class="item" id="fitCalc5">
-						&nbsp;&nbsp;&nbsp; <p>Thigh</p>
-						<input id="thigh" type="text" name="thigh">
-					</div>
-					<div class="item" id="fitCalc6">
-						&nbsp;&nbsp;&nbsp; <p>Lower leg</p>
-						<input id="lowerLeg" type="text" name="lowerleg">
-					</div>
-					<div class="item" id="fitCalc7">
-						&nbsp;&nbsp;&nbsp; <p>Sternal notch</p>
-						<input id="sternalNotch" type="text" name="sternalnotch">
-					</div>
-					<div class="item">
-						&nbsp;&nbsp;&nbsp; <p>Total height</p>
-						<input id="overallHeight" type="text" name="totalheight">
-					</div>
-					<div class="fill">
-					</div>
-				<div class="itemGO" onclick="calculateBike();">
-					<p>GO &gt;</p>
-				</div>
-			</div>
-			<div class="results">
-				<div class="item" id="item1" onclick="switchDiv('option1-items');">
-					<p>Option 1</p>
-					<p id="expcol">></p>
-				</div>
-                <div id="option1-items" style="display:none;">
-					<div class="item" id="item2" onclick="switchDiv('item3');">
-						<p>Frameset</p>
-					<p id="expcol">></p>
-					</div>
-						<div class="item" id="item3" style="display:none;">
-							<p>Frame</p>
-						</div>
-					<div class="item" id="item2">
-						<p>Drivetrain</p>
-					<p id="expcol">></p>
-					</div>
-					<div class="item" id="item2">
-						<p>Components</p>
-					<p id="expcol">></p>
-					</div>
-					<div class="item" id="item2">
-						<p>Wheels</p>
-					<p id="expcol">></p>
-					</div>
+        <div class="header">
+            <img src="lib/img/Bike.png">
+            <h1>BICICLETITUHS</h1>
+            <p id="helpNContact">Help | Contact</p>
+        </div>
+        <div class="main">
+            <div class="parameters">
+                <div class="item">
+                    <p>Budget</p>
+                    <input id="budget" type="text" name="budget">
                 </div>
-				<div class="item" id="item1">
-					<p>Option 2</p>
-					<p id="expcol">></p>
-				</div>
-			</div>
-			<div class="details">
-				<div class="item">
-					<img src="http://www.competitivecyclist.com/images/items/900/ZIP/ZIP0220/ONECOL.jpg" height="45%" width="45%;">
-				</div>
-				<div class="item">
-					<p>Name:</p>
-				</div>
-				<div class="item">
-					<p>Code:</p>
-				</div>
-				<div class="item">
-					<p>Weight:</p>
-				</div>
-				<div class="item">
-					<p>Dimensions:</p>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<p>
-			   Designed by Robots, Aliens &amp Superheroes<br>
-			   @2014 Hackathon, Backcountry.</p>
-		</footer>
+                <div class="item" id="bikeWeight">
+                    <p>Bicycle weight</p>
+                    <input id="bike-weight" type="text" name="weight">
+                </div>
+                <div class="item" id="bikeType">
+                    <p>Bicycle type</p>
+                    <select id="bikeType">
+                        <option value="mountain">Mountain</option>
+                        <option value="road">Road</option>
+                        <option value="cyclocross">Cyclocross</option>
+                        <option value="triathlon">Triathlon</option>
+                    </select>
+                </div>
+                <div class="item" id="fitCalc">
+                    <p>Fit Calculator</p>
+                </div>
+                <div class="item" id="bikeType">
+                    &nbsp;&nbsp;&nbsp; <p>Gender</p>
+                    <select id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="item" id="fitCalc1">
+                    &nbsp;&nbsp;&nbsp; <p>Actual inseam</p>
+                    <input id="inseam" type="text" name="actualinseam">
+                </div>
+                <div class="item" id="fitCalc2">
+                    &nbsp;&nbsp;&nbsp; <p>Trunk</p>
+                    <input id="trunk" type="text" name="trunk">
+                </div>
+                <div class="item" id="fitCalc3">
+                    &nbsp;&nbsp;&nbsp; <p>Forearm</p>
+                    <input id="forearm" type="text" name="forearm">
+                </div>
+                <div class="item" id="fitCalc4">
+                    &nbsp;&nbsp;&nbsp; <p>Arm</p>
+                    <input id="arm" type="text" name="arm">
+                </div>
+                <div class="item" id="fitCalc5">
+                    &nbsp;&nbsp;&nbsp; <p>Thigh</p>
+                    <input id="thigh" type="text" name="thigh">
+                </div>
+                <div class="item" id="fitCalc6">
+                    &nbsp;&nbsp;&nbsp; <p>Lower leg</p>
+                    <input id="lowerLeg" type="text" name="lowerleg">
+                </div>
+                <div class="item" id="fitCalc7">
+                    &nbsp;&nbsp;&nbsp; <p>Sternal notch</p>
+                    <input id="sternalNotch" type="text" name="sternalnotch">
+                </div>
+                <div class="item">
+                    &nbsp;&nbsp;&nbsp; <p>Total height</p>
+                    <input id="overallHeight" type="text" name="totalheight">
+                </div>
+                <div class="fill">
+                </div>
+                <div class="itemGO" onclick="calculateBike();">
+                    <p>GO &gt;</p>
+                </div>
+            </div>
+            <div class="results">
+                <div class="item" id="item1" onclick="switchDiv('option1-items');">
+                    <p>Option 1</p>
+                    <p id="expcol">></p>
+                </div>
+                <div id="option1-items" style="display:none;">
+                    <div class="item" id="frameset" onclick="switchDiv('frame-div');">
+                        <p>Frameset</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div class="item" id="frame-div" style="display:none;" onclick="updateComponentInfo(0,0);">
+                        <p>Frame</p>
+                    </div>
+                    <div class="item" id="drivetrain" onclick="switchDiv('crankset');">
+                        <p>Drivetrain</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div class="item" id="crankset" style="display:none;" onclick="updateComponentInfo(0,4);">
+                        <p>Crankset</p>
+                    </div>
+                    <div class="item" id="components" onclick="switchDiv('sub_components');">
+                        <p>Components</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div id="sub_components" style="display:none;">
+                        <div class="item" id="saddles" onclick="updateComponentInfo(0,1);">
+                            <p>Saddles</p>
+                        </div>
+                        <div class="item" id="handlebars" onclick="updateComponentInfo(0,2);">
+                            <p>Handlebars</p>
+                        </div>
+                    </div>
+                    <div class="item" id="wheels" onclick="switchDiv('sub_wheels');">
+                        <p>Wheels</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div class="item" id="sub_wheels" style="display:none;" onclick="updateComponentInfo(0,3);">
+                        <p>Wheels</p>
+                    </div>
+                </div>
+                <div class="item" id="item1">
+                    <p>Option 2</p>
+                    <p id="expcol">></p>
+                </div>
+            </div>
+            <div class="details">
+                <div class="item">
+                    <img id="component-image" height="45%" width="45%;">
+                </div>
+                <div class="item">
+                    <p id="component-name">Name:</p>
+                </div>
+                <div class="item">
+                    <p id="component-code">Code:</p>
+                </div>
+                <div class="item">
+                    <p id="component-weight">Weight:</p>
+                </div>
+                <div class="item">
+                    <p id="component-dimensions">Dimensions:</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                Designed by Robots, Aliens &amp; Superheroes<br>
+                @2014 Hackathon, Backcountry.</p>
+        </footer>
     </body>
 </html>
