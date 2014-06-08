@@ -109,6 +109,11 @@ footer{
 		float: right;
 	}
 	
+	.item img{
+		display: block;
+		margin: auto;
+	}
+	
 .itemGO{
 	background-color: #C00;
 	border-bottom: 1px solid white;
