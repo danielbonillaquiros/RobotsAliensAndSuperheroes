@@ -27,12 +27,23 @@ function calculateBike() {
   if(can_continue) {
     requestFitCalc();
     presupuesto = parseInt($("#budget").val());
-    setTimeout(function(){algoritmo();}, 1000);
+    setTimeout( function() {
+      algoritmo();
+    }, 1000);
 		$(".results").show();
   }
 }
 
 var fitCalculation;
+
+function updateComponentInfo(opc, num) {
+  $("#component-image").attr("src", "http://backcountry.com" + poblacion[opc].componente[num].imagen.replace("small", "large"));
+  $("#component-name").text("Name: " + poblacion[opc].componente[num].nombre);
+  $("#component-code").text("Code: " + poblacion[opc].componente[num].id);
+  $("#component-weight").text("Weight: " + poblacion[opc].componente[num].peso);
+  $("#component-dimensions").text("Dimensions: " + poblacion[opc].componente[num].medida);
+  $(".details").show();
+}
 
 function requestFitCalc() {
   var arm = parseInt($("#arm").val());
