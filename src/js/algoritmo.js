@@ -1,6 +1,6 @@
 	var medidas = new Array();
 	var peso = 0;
-	var presupuesto = 0;
+	var presupuesto = 4000;
 	var poblacion = new Array();
 	var numeroPoblacion = 10;
 
@@ -31,9 +31,53 @@ function comp() {
 function llenarComponentes(lista){
 	console.log("llenarComponentes" );
 	for(i = 0; i < 5 ; ++i){
-		console.log(lista[i].id);
-		lista[i].id = i;
-		lista[i].precio= 300;
+			var cual ;
+		switch (i){
+				case 0: 
+					cual = frames_array.length;
+					cual = Math.floor((Math.random() * cual));
+					lista[i].id = frames_array[cual].id;
+					lista[i].precio= frames_array[cual].skus[0].salePrice;
+					lista[i].imagen =  frames_array[cual].detailImages[0].url;
+					break;
+				case 1:
+					cual = saddles_array.length;
+					cual = Math.floor((Math.random() * cual));
+					lista[i].id = saddles_array[cual].id;
+					lista[i].precio= saddles_array[cual].skus[0].salePrice;
+					lista[i].imagen =  saddles_array[cual].detailImages[0].url;
+					
+					break;
+				case 2:
+					cual = handlebars_array.length;
+					cual = Math.floor((Math.random() * cual));
+					lista[i].id = handlebars_array[cual].id;
+					lista[i].precio= handlebars_array[cual].skus[0].salePrice;
+					//lista[i].imagen =  handlebars_array[cual].detailImages[0].url;
+				
+					break;
+				case 3:
+					cual = wheels_array.length;
+					cual = Math.floor((Math.random() * cual));
+					lista[i].id = wheels_array[cual].id;
+					lista[i].precio= wheels_array[cual].skus[0].salePrice;
+					console.log( wheels_array.length);
+					console.log("///////////");
+					console.log(cual);
+					//lista[i].imagen =  wheels_array[cual].detailImages[0].url;
+				
+					break;
+				case 4:
+					cual = cranksets_array.length;
+					cual = Math.floor((Math.random() * cual));
+					lista[i].id = cranksets_array[cual].id;
+					lista[i].precio= cranksets_array[cual].skus[0].salePrice;
+					//lista[i].imagen =  cranksets_array[cual].detailImages[0].url;
+				
+					break;				
+			
+			}
+		
 		lista[i].medida = Math.floor((Math.random() * 3) +1);
 		lista[i].peso =  Math.floor((Math.random() * 5) +1);
 		console.log(lista[i].id);
@@ -47,29 +91,56 @@ function mutar(cruzados){
 		var probaGen =  Math.floor((Math.random() * 100) + 1);
 		if(probaGen < probabilidadMutacion){
 			var cualGen = Math.floor((Math.random() * 5) );
+			var cual;
 			switch (cualGen){
 				case 0:
-					
+					cual = frames_array.length;
+					cual = Math.floor((Math.random() * cual));
+					cruzados[i].componente[cualGen].id = frames_array[cual].id;
+					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+					cruzados[i].componente[cualGen].precio = frames_array[cual].skus[0].salePrice;
+					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+					cruzados[i].componente[cualGen].imagen = frames_array[cual].detailImages[0].url;
 					break;
 				case 1:
-					
+					cual = saddles_array.length;
+					cual = Math.floor((Math.random() * cual));
+					cruzados[i].componente[cualGen].id = saddles_array[cual].id;
+					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+					cruzados[i].componente[cualGen].precio = saddles_array[cual].skus[0].salePrice;
+					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+					cruzados[i].componente[cualGen].imagen = saddles_array[cual].detailImages[0].url;
 					break;
 				case 2:
-				
+					cual = handlebars_array.length;
+					cual = Math.floor((Math.random() * cual));
+					cruzados[i].componente[cualGen].id = handlebars_array[cual].id;
+					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+					cruzados[i].componente[cualGen].precio = handlebars_array[cual].skus[0].salePrice;
+					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+					//cruzados[i].componente[cualGen].imagen = handlebars_array[cual].detailImages[0].url;
 					break;
 				case 3:
-				
+					cual = wheels_array.length;
+					cual = Math.floor((Math.random() * cual));
+					cruzados[i].componente[cualGen].id = wheels_array[cual].id;
+					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+					cruzados[i].componente[cualGen].precio = wheels_array[cual].skus[0].salePrice;
+					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+					//cruzados[i].componente[cualGen].imagen = wheels_array[cual].detailImages[0].url;
 					break;
 				case 4:
-				
+				    cual = cranksets_array.length;
+					cual = Math.floor((Math.random() * cual));
+					cruzados[i].componente[cualGen].id = cranksets_array[cual].id;
+					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+					cruzados[i].componente[cualGen].precio = cranksets_array[cual].skus[0].salePrice;
+					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+					//cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
 					break;				
 			
 			}
-			cruzados[i].componente[cualGen].id = "yo";
-			cruzados[i].componente[cualGen].peso= "yo";
-			cruzados[i].componente[cualGen].precio = "yo";
-			cruzados[i].componente[cualGen].medida = "yo";
-			
+				
 		}
 	}
 }
@@ -167,13 +238,13 @@ function sumarCosas(todos){
 		todos[i].precio = preciot;
 		todos[i].fitness = medidat;
 		if(pesot > peso){
-			todos[i].fitness -= pesot;
+			todos[i].fitness += pesot * 10000;
 		}
 		else{
 			todos[i].fitness += pesot;
 		}
 		if(preciot > presupuesto){
-			todos[i].fitness -= preciot;
+			todos[i].fitness += preciot * 100000000000;
 		}
 		else{
 			todos[i].fitness += preciot;
@@ -192,7 +263,7 @@ function algoritmo(){
 		console.log("mi generacion");
 		console.log(generacion);
 		sumarCosas(poblacion);
-		poblacion.sort(function(a, b){return b.fitness - a.fitness });
+		poblacion.sort(function(a, b){return a.fitness - b.fitness });
 		
 		poblacion = cruzar(poblacion);
 		mutar(poblacion);
@@ -200,8 +271,8 @@ function algoritmo(){
 		
 	}
 	sumarCosas(poblacion);
-	poblacion.sort(function(a, b){return b.fitness - a.fitness });
-	console.log(poblacion[0].fitness);
+	poblacion.sort(function(a, b){return a.fitness - b.fitness });
+	console.log(poblacion[0].precio);
 }
 
 
