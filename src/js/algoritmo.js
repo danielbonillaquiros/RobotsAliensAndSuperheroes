@@ -33,7 +33,7 @@ function llenarComponentes(lista){
 			var cual ;
 		switch (i){
 				case 0:
-					cual = frames_array.length - 1;
+					cual = frames_array.length;
 					cual = Math.floor((Math.random() * cual));
           if(typeof frames_array[cual].detailImages != "undefined") {
             lista[i].id = frames_array[cual].id;
@@ -44,7 +44,7 @@ function llenarComponentes(lista){
           }
 					break;
 				case 1:
-					cual = saddles_array.length - 1;
+					cual = saddles_array.length;
 					cual = Math.floor((Math.random() * cual));
           if(typeof saddles_array[cual].detailImages != "undefined") {
             lista[i].id = saddles_array[cual].id;
@@ -55,7 +55,7 @@ function llenarComponentes(lista){
           }
 					break;
 				case 2:
-					cual = handlebars_array.length - 1;
+					cual = handlebars_array.length;
 					cual = Math.floor((Math.random() * cual));
           if(typeof handlebars_array[cual].detailImages != "undefined") {
             lista[i].id = handlebars_array[cual].id;
@@ -66,7 +66,7 @@ function llenarComponentes(lista){
           }
 					break;
 				case 3:
-					cual = wheels_array.length - 1;
+					cual = wheels_array.length;
 					cual = Math.floor((Math.random() * cual));
           if(typeof wheels_array[cual].detailImages != "undefined") {
             lista[i].id = wheels_array[cual].id;
@@ -77,7 +77,7 @@ function llenarComponentes(lista){
           }
 					break;
 				case 4:
-					cual = cranksets_array.length - 1;
+					cual = cranksets_array.length;
 					cual = Math.floor((Math.random() * cual));
           if(typeof cranksets_array[cual].detailImages != "undefined") {
             lista[i].id = cranksets_array[cual].id;
@@ -108,47 +108,57 @@ function mutar(cruzados){
 				case 0:
 					cual = frames_array.length;
 					cual = Math.floor((Math.random() * cual));
-					cruzados[i].componente[cualGen].id = frames_array[cual].id;
-					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
-					cruzados[i].componente[cualGen].precio = frames_array[cual].skus[0].salePrice;
-					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					cruzados[i].componente[cualGen].imagen = frames_array[cual].detailImages[0].url;
+          if(typeof frames_array[cual].detailImages != "undefined") {
+            cruzados[i].componente[cualGen].id = frames_array[cual].id;
+            cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+            cruzados[i].componente[cualGen].precio = frames_array[cual].skus[0].salePrice;
+            cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+            cruzados[i].componente[cualGen].imagen = frames_array[cual].detailImages[0].url;
+          }
 					break;
 				case 1:
 					cual = saddles_array.length;
 					cual = Math.floor((Math.random() * cual));
-					cruzados[i].componente[cualGen].id = saddles_array[cual].id;
-					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
-					cruzados[i].componente[cualGen].precio = saddles_array[cual].skus[0].salePrice;
-					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					cruzados[i].componente[cualGen].imagen = saddles_array[cual].detailImages[0].url;
+          if(typeof saddles_array[cual].detailImages != "undefined") {
+            cruzados[i].componente[cualGen].id = saddles_array[cual].id;
+            cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+            cruzados[i].componente[cualGen].precio = saddles_array[cual].skus[0].salePrice;
+            cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+            cruzados[i].componente[cualGen].imagen = saddles_array[cual].detailImages[0].url;
+          }
 					break;
 				case 2:
 					cual = handlebars_array.length;
 					cual = Math.floor((Math.random() * cual));
-					cruzados[i].componente[cualGen].id = handlebars_array[cual].id;
-					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
-					cruzados[i].componente[cualGen].precio = handlebars_array[cual].skus[0].salePrice;
-					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					//cruzados[i].componente[cualGen].imagen = handlebars_array[cual].detailImages[0].url;
+          if(typeof handlebars_array[cual].detailImages != "undefined") {
+            cruzados[i].componente[cualGen].id = handlebars_array[cual].id;
+            cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+            cruzados[i].componente[cualGen].precio = handlebars_array[cual].skus[0].salePrice;
+            cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+            cruzados[i].componente[cualGen].imagen = handlebars_array[cual].detailImages[0].url;
+          }
 					break;
 				case 3:
 					cual = wheels_array.length;
 					cual = Math.floor((Math.random() * cual));
-					cruzados[i].componente[cualGen].id = wheels_array[cual].id;
-					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
-					cruzados[i].componente[cualGen].precio = wheels_array[cual].skus[0].salePrice;
-					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					//cruzados[i].componente[cualGen].imagen = wheels_array[cual].detailImages[0].url;
+          if(typeof wheels_array[cual].detailImages != "undefined") {
+            cruzados[i].componente[cualGen].id = wheels_array[cual].id;
+            cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+            cruzados[i].componente[cualGen].precio = wheels_array[cual].skus[0].salePrice;
+            cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+            cruzados[i].componente[cualGen].imagen = wheels_array[cual].detailImages[0].url;
+          }
 					break;
 				case 4:
-				    cual = cranksets_array.length;
+				  cual = cranksets_array.length;
 					cual = Math.floor((Math.random() * cual));
-					cruzados[i].componente[cualGen].id = cranksets_array[cual].id;
-					cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
-					cruzados[i].componente[cualGen].precio = cranksets_array[cual].skus[0].salePrice;
-					cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
-					//cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
+          if(typeof cranksets_array[cual].detailImages != "undefined") {
+            cruzados[i].componente[cualGen].id = cranksets_array[cual].id;
+            cruzados[i].componente[cualGen].peso= Math.floor((Math.random() * 5) +1);
+            cruzados[i].componente[cualGen].precio = cranksets_array[cual].skus[0].salePrice;
+            cruzados[i].componente[cualGen].medida = Math.floor((Math.random() * 3) +1);
+            cruzados[i].componente[cualGen].imagen = cranksets_array[cual].detailImages[0].url;
+          }
 					break;
 
 			}
