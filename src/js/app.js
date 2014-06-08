@@ -31,9 +31,8 @@ function calculateBike() {
       algoritmo();
       $("#priceTag1").text("$" + poblacion[0].precio);
       $("#priceTag2").text("$" + poblacion[1].precio);
-      $("#component-dimensions").text("Dimensions: " + poblacion[opc].componente[num].medida);
+		  $(".results").show();
     }, 1000);
-		$(".results").show();
   }
 }
 

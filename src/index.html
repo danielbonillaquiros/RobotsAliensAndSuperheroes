@@ -126,9 +126,44 @@
                         <p>Wheels</p>
                     </div>
                 </div>
-                <div class="item" id="item1">
+                <div class="item" id="item1" onclick="switchDiv('option2-items');">
 					<p>Option 2 <span id="priceTag2">$____</span></p>
                     <p id="expcol">></p>
+                </div>
+                <div id="option2-items" style="display:none;">
+                    <div class="item" id="frameset2" onclick="switchDiv('frame-div2');">
+                        <p>Frameset</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div class="item" id="frame-div2" style="display:none;" onclick="updateComponentInfo(1,0);">
+                        <p>Frame</p>
+                    </div>
+                    <div class="item" id="drivetrain2" onclick="switchDiv('crankset2');">
+                        <p>Drivetrain</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div class="item" id="crankset2" style="display:none;" onclick="updateComponentInfo(1,4);">
+                        <p>Crankset</p>
+                    </div>
+                    <div class="item" id="components2" onclick="switchDiv('sub_components2');">
+                        <p>Components</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div id="sub_components2" style="display:none;">
+                        <div class="item" id="saddles" onclick="updateComponentInfo(1,1);">
+                            <p>Saddles</p>
+                        </div>
+                        <div class="item" id="handlebars2" onclick="updateComponentInfo(1,2);">
+                            <p>Handlebars</p>
+                        </div>
+                    </div>
+                    <div class="item" id="wheels2" onclick="switchDiv('sub_wheels2');">
+                        <p>Wheels</p>
+                        <p id="expcol">></p>
+                    </div>
+                    <div class="item" id="sub_wheels2" style="display:none;" onclick="updateComponentInfo(1,3);">
+                        <p>Wheels</p>
+                    </div>
                 </div>
             </div>
             <div class="details">
