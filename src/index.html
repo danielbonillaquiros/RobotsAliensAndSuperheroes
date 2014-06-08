@@ -1,18 +1,125 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-
-        <title>Robots, Aliens &amp; Superheroes</title>
-
-        <script type="text/javascript" src="lib/lib/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="lib/lib/underscore-min.js"></script>
-        <script type="text/javascript" src="lib/lib/backbone-min.js"></script>
-        <script type="text/javascript" src="lib/lib/handlebars-v1.3.0.js"></script>
-
-    </head>
-
+        <title>Bicicletituhs</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="lib/css/style.css" />
+		<!--META-->
+		<meta charset="UTF-8">
+		<!--SCRIPTS-->
+		<script type="text/javascript" src="lib/scripts/jquery.js"></script>
+		<script type="text/javascript" src="lib/scripts/scripts.js"></script>
+	</head>
     <body>
-        <h1>Robots, Aliens &amp; Superheroes</h1>
+		<div class="header">
+			<img src="lib/img/Bike.png">
+			<h1>BICICLETITUHS</h1>
+			<p>Help | Contact</p>
+		</div>
+		<div class="main">
+			<div class="parameters">
+				<div class="item">
+					<p>Budget</p>
+					<input type="text" name="budget">
+				</div>
+				<div class="item" id="bikeType">
+					<p>Bicycle type</p>
+					<select>
+			          <option value="mountain">Mountain</option>
+			          <option value="road">Road</option>
+			          <option value="cyclocross">Cyclocross</option>
+			          <option value="triathlon">Triathlon</option>
+			        </select>
+				</div>
+				<div class="item" id="bikeWeight">
+					<p>Bicycle weight</p>
+					<input type="text" name="weight">
+				</div>
+				<div class="item" id="fitCalc">
+					<p>Fit Calculator</p>
+				</div>
+					<div class="item" id="fitCalc1">
+						<p>&nbsp&nbsp&nbsp <p>Actual inseam</p>
+						<input type="text" name="actualinseam">
+					</div>
+					<div class="item" id="fitCalc2">
+						<p>&nbsp&nbsp&nbsp <p>Trunk</p>
+						<input type="text" name="trunk">
+					</div>
+					<div class="item" id="fitCalc3">
+						&nbsp&nbsp&nbsp <p>Forearm</p>
+						<input type="text" name="foream">
+					</div>
+					<div class="item" id="fitCalc4">
+						&nbsp&nbsp&nbsp <p>Arm</p>
+						<input type="text" name="arm">
+					</div>
+					<div class="item" id="fitCalc5">
+						&nbsp&nbsp&nbsp <p>Thigh</p>
+						<input type="text" name="thigh">
+					</div>
+					<div class="item" id="fitCalc6">
+						&nbsp&nbsp&nbsp <p>Lower leg</p>
+						<input type="text" name="lowerleg">
+					</div>
+					<div class="item" id="fitCalc7">
+						&nbsp&nbsp&nbsp <p>Sternal notch</p>
+						<input type="text" name="sternalnotch">
+					</div>
+					<div class="item">
+						&nbsp&nbsp&nbsp <p>Total height</p>
+						<input type="text" name="totalheight">
+					</div>			
+				<div class="itemGO">
+					<p>GO ></p>
+				</div>
+			</div>
+			<div class="results">
+				<div class="item" id="item1">
+					<p>Option 1</p>
+					<p id="expcol">></p>
+				</div>
+					<div class="item" id="item2">
+						<p>Frameset</p>
+					<p id="expcol">></p>
+					</div>
+						<div class="item" id="item3">
+							<p>Frame</p>
+						</div>
+					<div class="item" id="item2">
+						<p>Drivetrain</p>
+					<p id="expcol">></p>
+					</div>
+					<div class="item" id="item2">
+						<p>Components</p>
+					<p id="expcol">></p>
+					</div>
+					<div class="item" id="item2">
+						<p>Wheels</p>
+					<p id="expcol">></p>
+					</div>
+				<div class="item" id="item1">
+					<p>Option 2</p>
+					<p id="expcol">></p>
+				</div>
+			</div>
+			<div class="details">
+				<div class="ImgNDetails">
+					<div class="itemImg">
+						<img>
+					</div>
+					<div class="itemDetails">
+						<p>Name:</p><br><br>
+						<p>Code:</p>
+						<p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>
+			   Designed by Robots, Aliens &amp Superheroes<br>
+			   @2014 Hackathon, Backcountry.</p>			
+		</footer>
     </body>
 </html>
