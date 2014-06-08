@@ -29,6 +29,9 @@ function calculateBike() {
     presupuesto = parseInt($("#budget").val());
     setTimeout( function() {
       algoritmo();
+      $("#priceTag1").text("$" + poblacion[0].precio);
+      $("#priceTag2").text("$" + poblacion[1].precio);
+      $("#component-dimensions").text("Dimensions: " + poblacion[opc].componente[num].medida);
     }, 1000);
 		$(".results").show();
   }
@@ -40,6 +43,7 @@ function updateComponentInfo(opc, num) {
   $("#component-image").attr("src", "http://backcountry.com" + poblacion[opc].componente[num].imagen.replace("small", "large"));
   $("#component-name").text("Name: " + poblacion[opc].componente[num].nombre);
   $("#component-code").text("Code: " + poblacion[opc].componente[num].id);
+  $("#component-price").text("Price: $" + poblacion[opc].componente[num].precio);
   $("#component-weight").text("Weight: " + poblacion[opc].componente[num].peso);
   $("#component-dimensions").text("Dimensions: " + poblacion[opc].componente[num].medida);
   $(".details").show();
