@@ -1,4 +1,7 @@
-var fitCalc;
+var test_fitCalc;
+var test_product;
+var test_fork;
+var test_category;
 
 function requestFitCalc() {
   var arm = $("#arm").val();
@@ -28,7 +31,7 @@ function requestFitCalc() {
   };
   var url = "/public/fitcalculator/fit";
 
-  fitCalc = $.ajax({
+  var temp = $.ajax({
     type: "POST",
     url: url,
     data: JSON.stringify(sendInfo),
@@ -36,6 +39,7 @@ function requestFitCalc() {
     contentType: "application/json;charset=UTF-8",
     success: function (msg) {
       if (msg) {
+        test_fitCalc = temp;
         console.info("Fit calculation succeeded!");
       } else {
         console.error("There was an error with the fit calculation!");
@@ -45,18 +49,16 @@ function requestFitCalc() {
 }
 
 function requestProduct() {
-  /*$.getJSON( "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + $("#product").val() + "?callback=?", function( data ) {
-    $( ".result" ).html( data );
-    alert( "Load was performed." );
-  });*/
-  var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + $("#product").val() + "?callback=?";
+  var product_id = $("#product").val();
+  var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + product_id + "?callback=?";
 
-  $.ajax({
+  var temp = $.ajax({
     type: "GET",
     url: url,
-    dataType: "jsonp",
+    dataType: "json",
     success: function (msg) {
       if(msg) {
+        test_product = temp;
         console.info("Request product succeeded!");
       } else {
         console.error("There was an error fetching product info!");
@@ -66,20 +68,40 @@ function requestProduct() {
 }
 
 function requestBike() {
-  var sendInfo = "_dyncharset=UTF-8&%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.frameSkuId=PIN000M&_D%3A%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.frameSkuId=+&%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.useMockResponse=false&_D%3A%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.useMockResponse=+&_D%3A%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.getCompatibleGruppos=+&_DARGS=%2FStore%2Fcatalog%2Finclude%2FbikeBuilderInit.jsp.ajaxform-getGruppos&%2Fbackcountry%2Fcatalog%2Fbikebuilder%2Fformhandler%2FBikeBuilderFormHandler.getCompatibleGruppos=";
-  var url = "/compcyclist/Store/catalog/productLanding.jsp?_DARGS=/Store/catalog/include/bikeBuilderInit.jsp.ajaxform-getGruppos";
+  var part_id = $("#part_id").val();
+  var sendInfo = "_dyncharset=UTF-8&/backcountry/catalog/bikebuilder/formhandler/BikeBuilderFormHandler.frameSkuId=" + part_id + "&_D:/backcountry/catalog/bikebuilder/formhandler/BikeBuilderFormHandler.frameSkuId=+&/backcountry/catalog/bikebuilder/formhandler/BikeBuilderFormHandler.useMockResponse=false&_D:/backcountry/catalog/bikebuilder/formhandler/BikeBuilderFormHandler.useMockResponse=+&_D:/backcountry/catalog/bikebuilder/formhandler/BikeBuilderFormHandler.getCompatibleGruppos=+&_DARGS=/Store/catalog/include/bikeBuilderInit.jsp.ajaxform-getGruppos&/backcountry/catalog/bikebuilder/formhandler/BikeBuilderFormHandler.getCompatibleGruppos=";
+  var url = "/compcyclist";
 
-  $.ajax({
+  var temp = $.ajax({
     type: "POST",
     url: url,
     data: sendInfo,
-    dataType: "json",
-    contentType: 'application/json;charset=UTF-8',
     success: function (msg) {
       if (msg) {
+        test_fork = temp;
         console.info("Request bike succeeded!");
       } else {
         console.error("There was an error fetching bike info!");
+      }
+    }
+  });
+}
+
+function requestCategory() {
+  var cat_id = $("#cat_id").val();
+  var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/categories/" + cat_id + "/products";
+
+  var temp = $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "jsonp",
+    contentType: "application/json;charset=UTF-8",
+    success: function (msg) {
+      if(msg) {
+        test_category = temp;
+        console.info("Request product succeeded!");
+      } else {
+        console.error("There was an error fetching product info!");
       }
     }
   });
