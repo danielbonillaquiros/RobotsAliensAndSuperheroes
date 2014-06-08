@@ -33,46 +33,59 @@ function llenarComponentes(lista){
 			var cual ;
 		switch (i){
 				case 0:
-					cual = frames_array.length;
+					cual = frames_array.length - 1;
 					cual = Math.floor((Math.random() * cual));
-					lista[i].id = frames_array[cual].id;
-					lista[i].precio= frames_array[cual].skus[0].salePrice;
-					lista[i].imagen =  frames_array[cual].detailImages[0].url;
+          if(typeof frames_array[cual].detailImages != "undefined") {
+            lista[i].id = frames_array[cual].id;
+            lista[i].precio= frames_array[cual].skus[0].salePrice;
+            lista[i].imagen =  frames_array[cual].detailImages[0].url;
+          } else {
+            --i;
+          }
 					break;
 				case 1:
-					cual = saddles_array.length;
+					cual = saddles_array.length - 1;
 					cual = Math.floor((Math.random() * cual));
-					lista[i].id = saddles_array[cual].id;
-					lista[i].precio= saddles_array[cual].skus[0].salePrice;
-					lista[i].imagen =  saddles_array[cual].detailImages[0].url;
-
+          if(typeof saddles_array[cual].detailImages != "undefined") {
+            lista[i].id = saddles_array[cual].id;
+            lista[i].precio= saddles_array[cual].skus[0].salePrice;
+            lista[i].imagen =  saddles_array[cual].detailImages[0].url;
+          } else {
+            --i;
+          }
 					break;
 				case 2:
-					cual = handlebars_array.length;
+					cual = handlebars_array.length - 1;
 					cual = Math.floor((Math.random() * cual));
-					lista[i].id = handlebars_array[cual].id;
-					lista[i].precio= handlebars_array[cual].skus[0].salePrice;
-					//lista[i].imagen =  handlebars_array[cual].detailImages[0].url;
-
+          if(typeof handlebars_array[cual].detailImages != "undefined") {
+            lista[i].id = handlebars_array[cual].id;
+            lista[i].precio= handlebars_array[cual].skus[0].salePrice;
+            lista[i].imagen =  handlebars_array[cual].detailImages[0].url;
+          } else {
+            --i;
+          }
 					break;
 				case 3:
-					cual = wheels_array.length;
+					cual = wheels_array.length - 1;
 					cual = Math.floor((Math.random() * cual));
-					lista[i].id = wheels_array[cual].id;
-					lista[i].precio= wheels_array[cual].skus[0].salePrice;
-					console.log( wheels_array.length);
-					console.log("///////////");
-					console.log(cual);
-					//lista[i].imagen =  wheels_array[cual].detailImages[0].url;
-
+          if(typeof wheels_array[cual].detailImages != "undefined") {
+            lista[i].id = wheels_array[cual].id;
+            lista[i].precio= wheels_array[cual].skus[0].salePrice;
+            lista[i].imagen =  wheels_array[cual].detailImages[0].url;
+          } else {
+            --i;
+          }
 					break;
 				case 4:
-					cual = cranksets_array.length;
+					cual = cranksets_array.length - 1;
 					cual = Math.floor((Math.random() * cual));
-					lista[i].id = cranksets_array[cual].id;
-					lista[i].precio= cranksets_array[cual].skus[0].salePrice;
-					//lista[i].imagen =  cranksets_array[cual].detailImages[0].url;
-
+          if(typeof cranksets_array[cual].detailImages != "undefined") {
+            lista[i].id = cranksets_array[cual].id;
+            lista[i].precio= cranksets_array[cual].skus[0].salePrice;
+            lista[i].imagen =  cranksets_array[cual].detailImages[0].url;
+          } else {
+            --i;
+          }
 					break;
 
 			}
