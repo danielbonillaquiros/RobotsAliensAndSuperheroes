@@ -58,7 +58,25 @@ function requestProduct() {
     dataType: "json",
     success: function (msg) {
       if(msg) {
-        test_product = temp;
+        test_product = temp.responseJSON.products[0];
+        console.info("Request product succeeded!");
+      } else {
+        console.error("There was an error fetching product info!");
+      }
+    }
+  });
+}
+
+function pushProduct(product_id, product_array) {
+  var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/products/" + product_id + "?callback=?";
+
+  var temp = $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "json",
+    success: function (msg) {
+      if(msg) {
+        product_array.push(temp.responseJSON.products[0]);
         console.info("Request product succeeded!");
       } else {
         console.error("There was an error fetching product info!");
@@ -89,20 +107,48 @@ function requestBike() {
 
 function requestCategory() {
   var cat_id = $("#cat_id").val();
-  var url = "http://hackathon.backcountry.com:8081/hackathon/public/product/v1/categories/" + cat_id + "/products";
+  var url = "/public/product/categories/" + cat_id + "/products?site=bcs&outlet=false&preview=false";
 
   var temp = $.ajax({
     type: "GET",
     url: url,
-    dataType: "jsonp",
+    dataType: "json",
     contentType: "application/json;charset=UTF-8",
     success: function (msg) {
       if(msg) {
-        test_category = temp;
+        test_category = temp.responseJSON.products;
         console.info("Request product succeeded!");
       } else {
         console.error("There was an error fetching product info!");
       }
+    },
+    error: function(msg) {
+      console.error(msg);
+    }
+  });
+}
+
+function fetchCategory(category_array, category_id) {
+  var url = "/public/product/categories/" + category_id + "/products?site=bcs&outlet=false&preview=false";
+  var temp_array;
+
+  var temp = $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "json",
+    contentType: "application/json;charset=UTF-8",
+    success: function (msg) {
+      if(msg) {
+        temp_array = temp.responseJSON.products;
+        for(var i = 0; i < temp_array.length; ++i) {
+          if(category_array.length <= i) pushProduct(temp_array[i].id, category_array);
+        }
+      } else {
+        console.error("There was an error fetching product info!");
+      }
+    },
+    error: function(msg) {
+      console.error(msg);
     }
   });
 }
