@@ -5,14 +5,40 @@
 
         <title>Robots, Aliens &amp; Superheroes</title>
 
-        <script type="text/javascript" src="lib/lib/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="lib/lib/underscore-min.js"></script>
-        <script type="text/javascript" src="lib/lib/backbone-min.js"></script>
-        <script type="text/javascript" src="lib/lib/handlebars-v1.3.0.js"></script>
+        <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="lib/underscore-min.js"></script>
+        <script type="text/javascript" src="lib/backbone-min.js"></script>
+        <script type="text/javascript" src="lib/handlebars-v1.3.0.js"></script>
+
+        <script type="text/javascript" src="js/app.js"></script>
 
     </head>
 
     <body>
         <h1>Robots, Aliens &amp; Superheroes</h1>
+
+        arm: <input type="text" id="arm" value="20"><br>
+        bikeType: <input type="text" id="bikeType" value="mountain"><br>
+        forearm: <input type="text" id="forearm" value="10"><br>
+        gender: <input type="text" id="gender" value="female"><br>
+        inseam: <input type="text" id="inseam" value="20"><br>
+        lowerLeg: <input type="text" id="lowerLeg" value="20"><br>
+        overallHeight: <input type="text" id="overallHeight" value="50"><br>
+        sternalNotch: <input type="text" id="sternalNotch" value="40"><br>
+        thigh: <input type="text" id="thigh" value="20"><br>
+        trunk: <input type="text" id="trunk" value="20"><br>
+        unit: <input type="text" id="unit" value="in"><br>
+        <button onclick="requestFitCalc();">send request</button>
+
+        <br><br>
+
+        product id: <input type="text" id="product" value="ARC3660"><br>
+        <button onclick="requestProduct();">send request</button>
+
+        <br><br>
+
+        bike id: <input type="text" id="bike" value=""><br>
+        <button onclick="requestBike();">send request</button>
+
     </body>
 </html>
