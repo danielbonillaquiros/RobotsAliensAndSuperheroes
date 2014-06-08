@@ -11,6 +11,15 @@ $(document).ready(function(){
 		}
 		else{
 			$("#expcol", this).text("v");
+			if(this.id == "item1"){
+				$("#item2", this).hidden();
+				$().hidden();
+			}
+			else{
+				if(this.id == "item2"){
+					
+				}
+			}
 		}
 	});
 	
